@@ -150,27 +150,38 @@ It runs through all the steps defined in your `.pkr.hcl` files – including ISO
 packer build .
 ```
 
-## Variables
+## 🧩 Variables
 
-Variables are defined in variables.pkr.hcl and can be overridden using CLI parameters.
+Packer uses variables to parameterise the build.  
+They are managed in two ways:
 
-Example:
+1. **`variables.pkr.hcl`** – declares variables (name, type, and optional default value).  
+   - Example:
+     ```hcl
+     variable "vm_name" {
+       type    = string
+       default = "ubuntu22-golden"
+     }
+     variable "cpu" {
+       type = number
+     }
+     ```
 
-```bash
-variable "vm_name" {
-  type    = string
-  default = "ubuntu22-golden"
-}
+2. **`*.auto.pkvars.hcl`** – provides actual values for the variables.  
+   - Example:
+     ```hcl
+     vm_name   = "ubuntu22-template"
+     cpu       = 2
+     memory    = 4096
+     datastore = "Datastore1"
+     network   = "VM Network"
+     ```
 
-variable "cpu" {
-  type    = number
-  default = 2
-}
-```
-Override during build:
-```bash
-packer build -var "vm_name=test-ubuntu22" .
-```
+3. **Command-line override** (optional):  
+   ```bash
+   packer build -var "vm_name=ubuntu22-test" .
+
+⚠️ Important: Every variable declared in variables.pkr.hcl must be provided either with a default value or via an auto.pkvars.hcl file / CLI override. Otherwise, the build will fail.
 
 ##  Conclusion
 
