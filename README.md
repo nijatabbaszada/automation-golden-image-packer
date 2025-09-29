@@ -104,12 +104,12 @@ You have two options:*
 
 1. **Upload ISO to vCenter Datastore**  
    - Download the desired ISO (e.g., Ubuntu 22.04.5 LTS).  
-   - Upload it to your vCenter datastore (e.g., `DC2_E590H_02_Admins_Test`).  
+   - Upload it to your vCenter datastore.  
    - Update the `iso_datastore_path` variable in your Packer configuration:  
 
    ```hcl
    # Example: ISO file path on vCenter datastore
-   iso_datastore_path = "[DC2_E590H_02_Admins_Test] Debian-iso-files-for-packer/ubuntu-22.04.5-desktop-amd64.iso"
+   iso_datastore_path = "[datastore2] datastore-folder-name/rhel-baseos-9.0-x86_64-dvd.iso"
 
 2. Use an External URL
 
@@ -150,7 +150,7 @@ It runs through all the steps defined in your `.pkr.hcl` files – including ISO
 packer build .
 ```
 
-## 🧩 Variables
+##  Variables
 
 Packer uses variables to parameterise the build.  
 They are managed in two ways:
@@ -197,6 +197,6 @@ After running `packer build`, the process will:
 
 ##  Useful Links
 
-- ![Packer install](https://developer.hashicorp.com/packer/install)
-- ![Packer Documentation](https://developer.hashicorp.com/packer/docs/hcp)
-- ![VMware ISO Config](https://developer.hashicorp.com/packer/integrations/hashicorp/vmware/latest/components/builder/iso)
+- [Packer install](https://developer.hashicorp.com/packer/install)
+- [Packer Documentation](https://developer.hashicorp.com/packer/docs/hcp)
+- [VMware ISO Config](https://developer.hashicorp.com/packer/integrations/hashicorp/vmware/latest/components/builder/iso)
