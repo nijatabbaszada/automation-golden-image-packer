@@ -1,0 +1,1 @@
+# automation-golden-image-packer
