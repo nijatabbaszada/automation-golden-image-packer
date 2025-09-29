@@ -36,7 +36,7 @@ automation-golden-image-packer/
 └── README.md # Documentation
 ```
 
-## 📄 File Descriptions
+##  File Descriptions
 
 - **locals.pkr.hcl** – Defines local variables and helper expressions used during the build.  
 - **variables.pkr.hcl** – Contains input variables (CPU, RAM, disk size, VM name, etc.).  
@@ -49,7 +49,7 @@ automation-golden-image-packer/
 
 ---
 
-## 🛠 Tools & Technologies
+##  Tools & Technologies
 - **HashiCorp Packer** – image creation  
 - **VMware vSphere** – target hypervisor (vCenter + ESXi)  
 - **Terraform** – to consume the golden images in infrastructure workflows  
@@ -61,7 +61,7 @@ automation-golden-image-packer/
 
 ---
 
-## 🔌 VMware Plugin for Packer
+##  VMware Plugin for Packer
 
 This project uses the **Packer VMware plugin** to build golden images for VMware vSphere.
 
@@ -97,7 +97,7 @@ vmware-vmx
 Starts from an existing .vmx virtual machine file, runs provisioners, and exports a new image.
 ✅ Best for iterating on existing VMs.
 
-## 💿 ISO File
+##  ISO File
 
 *To build a golden image, you need to provide the operating system ISO file.  
 You have two options:*
@@ -124,7 +124,7 @@ iso_checksum = "sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     - If using a URL, always include the iso_checksum for image integrity verification.
 
 
-## ⚙️ Usage
+##  Usage
 
 ### 1. Clone the repository
 ```bash
@@ -133,7 +133,7 @@ cd automation-golden-image-packer/packer-ubuntu22 # you can choose build for rhe
 ```
 
 ### 2. Validate the configuration
-### 🔍 Validate Configuration
+###  Validate Configuration
 
 The `packer validate` command is used to **check the syntax and configuration** of your Packer templates before starting a build.  
 It ensures that all required variables, plugins, and configuration blocks are correct.
@@ -172,7 +172,7 @@ Override during build:
 packer build -var "vm_name=test-ubuntu22" .
 ```
 
-## 📜 Conclusion
+##  Conclusion
 
 After running `packer build`, the process will:
 
