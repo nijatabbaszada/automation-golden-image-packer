@@ -193,3 +193,10 @@ After running `packer build`, the process will:
 4. This template can then be reused to quickly deploy new VMs with consistent configuration.  
 
 ✅ The result is a **golden image** – a standardised, reusable VM template that ensures faster, repeatable, and more secure deployments across your environment.
+
+
+##  Useful Links
+
+- ![Packer install](https://developer.hashicorp.com/packer/install)
+- ![Packer Documentation](https://developer.hashicorp.com/packer/docs/hcp)
+- ![VMware ISO Config](https://developer.hashicorp.com/packer/integrations/hashicorp/vmware/latest/components/builder/iso)
