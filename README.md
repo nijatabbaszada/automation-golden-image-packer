@@ -1,4 +1,4 @@
-# Terraform-Packer Golden Images
+# HashiCorp Packer Golden Images
 
 ## 📌 Introduction
 This repository contains **HashiCorp Packer HCL configurations** for building golden images of different operating systems.  
@@ -142,7 +142,7 @@ It ensures that all required variables, plugins, and configuration blocks are co
 packer validate .
 ```
 
-### 3.Build the image
+### 3. Build the image
 The `packer build` command is used to **create the golden image** based on the configuration.  
 It runs through all the steps defined in your `.pkr.hcl` files – including ISO boot, installation, provisioning scripts, and exporting the VM template.
 
